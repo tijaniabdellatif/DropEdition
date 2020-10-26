@@ -22,7 +22,7 @@ class YoutubeController extends Controller
         return view('youtube.results');
     }
 
-    public function watch($id)
+    public function watch()
     {
         return view('youtube.watch');
     }

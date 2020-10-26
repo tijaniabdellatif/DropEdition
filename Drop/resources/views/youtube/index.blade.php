@@ -6,15 +6,15 @@
     <div class="row">
         <div class="col-4">
       @foreach ($videos->items as $key => $item )
-        <a href="#">
+        <a href="{{route('youtube.watch')}}">
                 <div class="card mb-4">
 
                 <img src="{{$item->snippet->thumbnails->medium->url}}" width="50" height="40">
                     <div class="card-body">
-                        <h5 class="card-titled">Title</h5>
+                        <h5 class="card-titled">{{ \Illuminate\Support\Str::limit($item->snippet->title,$limit=50,$end='....') }}</h5>
                     </div>
                     <div class="card-footer">
-                        published on 23
+                        Published at {{date('d M Y',strtotime($item->snippet->publishTime))}}
                     </div>
 
                 </div>
