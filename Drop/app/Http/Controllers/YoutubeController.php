@@ -41,7 +41,7 @@ class YoutubeController extends Controller
          $apikey = config('services.youtube.api_key');
          $max = 2;
          $youtubeEndpoint = config('services.youtube.search_endpoint');
-         $type='video,playlist,channel';
+         $type='video';
          $url = "$youtubeEndpoint?part=$part&maxResults=$max&regionCode=$country&type=$type&key=$apikey&q=$keywords";
          $response = Http::get($url);
 
