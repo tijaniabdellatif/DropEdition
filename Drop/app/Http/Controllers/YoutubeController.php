@@ -14,15 +14,15 @@ class YoutubeController extends Controller
     */
     public function index()
     {
-        $videoLists = $this->_videoList('laravel_chat');
-        return view('youtube.index',compact('videoLists'));
+        $videos = $this->_videoList('laravel');
+        return view('youtube.index',compact('videos'));
     }
     public function results()
     {
         return view('youtube.results');
     }
 
-    public function watch()
+    public function watch($id)
     {
         return view('youtube.watch');
     }
@@ -39,15 +39,16 @@ class YoutubeController extends Controller
          $part='snippet';
          $country='MA';
          $apikey = config('services.youtube.api_key');
-         $max = 12;
+         $max = 2;
          $youtubeEndpoint = config('services.youtube.search_endpoint');
          $type='video,playlist,channel';
-
          $url = "$youtubeEndpoint?part=$part&maxResults=$max&regionCode=$country&type=$type&key=$apikey&q=$keywords";
          $response = Http::get($url);
 
          $results = json_decode($response);
          File::put(storage_path() . '/app/public/results.json',$response->body());
+
+         return $results;
 
     }
 }
