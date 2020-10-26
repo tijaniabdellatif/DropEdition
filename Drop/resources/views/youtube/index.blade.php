@@ -6,7 +6,12 @@
     <div class="row">
         @foreach ($videos->items as $key => $item )
         <div class="col-4">
+<<<<<<< HEAD
         <a href="{{route('youtube.watch')}}">
+=======
+      @foreach ($videos->items as $key => $item )
+        <a href="{{route('youtube.watch',[($item->id->videoId)])}}">
+>>>>>>> develop
                 <div class="card mb-4">
 
                 <img src="{{$item->snippet->thumbnails->medium->url}}" width="100%" height="50%">
