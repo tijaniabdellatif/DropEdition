@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\CourController;
+use App\Http\Controllers\YoutubeController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,12 +16,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/home', function () {
+    return view('home');
 });
 
-Route::get('cours/03',[CourController::class,'index'])->name('cours.list');
-Route::get('cours/04', [CourController::class, 'listing'])->name('cours.listing');
+Route::get('cours/03',[CourController::class,'index'])->name('cours.list')->middleware('auth');
+Route::get('cours/04', [CourController::class,'listing'])->name('cours.listing')->middleware('auth');
+Route::get('youtube/index',[YoutubeController::class,'index'])->name('youtube.index')->middleware('auth');
+Route::get('youtube/results', [YoutubeController::class,'results'])->name('youtube.results')->middleware('auth');
+Route::get('youtube/watch', [YoutubeController::class,'watch'])->name('youtube.watch')->middleware('auth');
 Auth::routes(['register'=>false]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
