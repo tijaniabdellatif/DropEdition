@@ -18,12 +18,13 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="{{asset('js/script.js')}}"></script>  
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/category') }}">
+                <a class="navbar-brand" href="{{ url('') }}">
                 <img src="{{asset('images/dump.png')}}" width="50px" height="50px">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -41,16 +42,16 @@
                         <!-- Authentication Links -->
                        
                         <li class="nav-item">
-                                <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="{{url('/home')}}">Home</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" href="{{route('cours.list')}}">Section 1</a>
+                            <a class="nav-link" href="{{route('cours.list')}}">Data for 3 January</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" href="{{route('cours.listing')}}">Section 2</a>
+                            <a class="nav-link" href="{{route('cours.listing')}}">Data for 4 January</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Section 3</a>
+                            <a class="nav-link" href="{{route('youtube.index')}}">Youtube</a>
                             </li>
 
 
