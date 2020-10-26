@@ -15,7 +15,7 @@ class YoutubeController extends Controller
     public function index()
     {
         $videoLists = $this->_videoList('laravel_chat');
-        return view('youtube.index');
+        return view('youtube.index',compact('videoLists'));
     }
     public function results()
     {
@@ -37,7 +37,7 @@ class YoutubeController extends Controller
     {
 
          $part='snippet';
-         $country='BD';
+         $country='MA';
          $apikey = config('services.youtube.api_key');
          $max = 12;
          $youtubeEndpoint = config('services.youtube.search_endpoint');
