@@ -24,7 +24,7 @@ Route::get('cours/03',[CourController::class,'index'])->name('cours.list')->midd
 Route::get('cours/04', [CourController::class,'listing'])->name('cours.listing')->middleware('auth');
 Route::get('youtube/index',[YoutubeController::class,'index'])->name('youtube.index')->middleware('auth');
 Route::get('youtube/results', [YoutubeController::class,'results'])->name('youtube.results')->middleware('auth');
-Route::get('youtube/watch{id}', [YoutubeController::class,'watch'])->name('youtube.watch')->middleware('auth');
+Route::get('youtube/watch', [YoutubeController::class,'watch'])->name('youtube.watch')->middleware('auth');
 Auth::routes(['register'=>false]);
 
 
