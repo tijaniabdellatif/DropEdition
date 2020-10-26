@@ -10,6 +10,3 @@
 
  *GitHub Issues Mapping*
  https://github.com/tijaniabdellatif/DropEdition/projects/1?add_cards_query=is%3Aopen
-
- *Task Planification*
- https://docs.google.com/spreadsheets/d/1NM_gEF1-vL3_-NjkVuGk9GGEgCDeCLMadxIMV4ziM3Y/edit#gid=0
